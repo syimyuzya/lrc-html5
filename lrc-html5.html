@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lrc-html5 | by SyiMyuZya</title>
+<style type="text/css">
+.fullwidth {
+	width: 60%;
+}
+</style>
+</head>
+<body>
+
+<div>
+	<div>
+		<label>url:</label>
+		<input type="text" id="filename" value="music.mp3" />
+		<input type="button" value="load" onclick="loadFile(); return true" />
+	</div>
+	<div>
+		<audio id="player" controls=controls class="fullwidth">
+		</audio>
+	</div>
+	<div>
+		<input type="button" value="<" onclick="left(); return true;" />
+		<input type="button" value="tag" onclick="addTag(); return true;" />
+		<input type="button" value=">" onclick="right(); return true;" />
+	</div>
+	<div>
+		<textarea id="editor" rows="24" cols="80"></textarea>
+	</div>
+</div>
+
+<script>
+filenameText = document.getElementById('filename');
+player = document.getElementById('player');
+editor = document.getElementById('editor');
+function addTag() {
+	editor.value += formatTime(a1.currentTime);
+	editor.scrollTop = t1.scrollHeight;
+}
+function formatTime(second) {
+	var zero = function(x) { return x<10?"0":"";}
+	var minute = second/60 | 0;
+	second -= minute*60;
+	return "["+zero(minute)+minute+":"+zero(second)+second.toFixed(2)+"]\n";
+}
+function left() {
+	player.currentTime -= 5;
+}
+function right() {
+	player.currentTime += 5;
+}
+function loadFile() {
+	player.src = filenameText.value.trim();
+	player.load();
+}
+</script>
+
+</body>
+</html>
