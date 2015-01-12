@@ -35,8 +35,8 @@ filenameText = document.getElementById('filename');
 player = document.getElementById('player');
 editor = document.getElementById('editor');
 function addTag() {
-	editor.value += formatTime(a1.currentTime);
-	editor.scrollTop = t1.scrollHeight;
+	editor.value += formatTime(player.currentTime);
+	editor.scrollTop = editor.scrollHeight;
 }
 function formatTime(second) {
 	var zero = function(x) { return x<10?"0":"";}

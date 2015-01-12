@@ -2,7 +2,7 @@
 
 by 思無邪SyiMyuZya
 
-使用HTML5 audio元素實現的LRC格式歌詞標籤製作工具。
+使用HTML5 audio元素實現的LRC格式歌詞時間標籤製作工具。
 
 ## 使用
 
